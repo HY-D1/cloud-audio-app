@@ -12,3 +12,6 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 python app.py
 
+docker build -t cloud-audio-app .
+docker run --rm -p 8080:5000 -e PORT=5000 cloud-audio-app
+# open http://127.0.0.1:8080
